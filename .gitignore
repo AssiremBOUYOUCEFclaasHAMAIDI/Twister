@@ -1,0 +1,6 @@
+server/node_modules/
+server/*.json
+client/node_modules/
+client/*.json
+server/db0
+server/*.db
