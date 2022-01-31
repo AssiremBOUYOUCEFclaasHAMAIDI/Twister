@@ -1,0 +1,33 @@
+---
+    services:
+      serveur:
+        image: server
+        build: ./server
+        ports:
+          - "4000:4000"
+        volumes:
+          - ./:/usr/src/app
+        networks: 
+           app:
+             ipv4_address: 172.19.0.3
+
+      client:
+        image: client3
+        build: ./client
+        ports:
+          - "3000:3000"
+        volumes:
+           - ./:/usr/src/app 
+        networks:
+            - app
+
+    
+    networks:
+        app:
+            ipam:
+                config:
+                    - subnet: 172.19.0.0/24
+
+
+            
+        
